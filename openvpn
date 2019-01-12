@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#------------------------------------------------------------------------
+
+TUN=$(/sbin/ip addr show | grep -w 'tun0:' | wc -l)
+
+#------------------------------------------------------------------------
+
+echo "VPN-CPD"
+echo "VPN-CPD"
+
+if [[ $TUN -eq 1 ]]; then
+    TUN="ON"
+    echo "#00FF00"
+elif [[ $TUN -eq 0 ]]; then
+    TUN="OFF"
+    echo "#FF0000"
+fi
